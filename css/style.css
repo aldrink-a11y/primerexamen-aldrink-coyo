@@ -1,0 +1,65 @@
+
+
+/* Estilos para móviles (mobile-first) */
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: red; /* Header cambia a color rojo */
+}
+
+/* Oculta el banner */
+.banner {
+    display: none;
+}
+
+/* Estilo de los productos en formato tarjeta */
+.productos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.productos li {
+    margin: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.producto-card {
+    text-align: center;
+    padding: 1rem;
+}
+
+.producto-card img {
+    width: 100%;
+    height: auto;
+}
+
+.producto-card h3 {
+    margin: 0.5rem 0;
+}
+
+.producto-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+/* Footer con color azul */
+footer {
+    background-color: blue; /* Footer cambia a color azul */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Media query para pantallas más grandes, por ejemplo, más de 600px */
+@media (min-width: 600px) {
+    /* Estilos adicionales para web, si los necesitas */
+}
