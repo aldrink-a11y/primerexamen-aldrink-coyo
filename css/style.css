@@ -1,65 +1,260 @@
-
-
-/* Estilo para móvil (mobile-first) */
+/* --- Base y Mobile-First --- */
 body {
     font-family: sans-serif;
     margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
+/* Skip link para accesibilidad */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* Header (Mobile) */
 header {
-    background-color: red; /* Header cambia a color rojo */
+    background-color: red; /* Header cambia a color rojo en móvil */
+    padding: 1rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Oculta el banner */
-.banner {
-    display: none;
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Estilo de los productos en formato tarjeta */
-.productos ul {
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Navegación (Mobile) */
+nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: none; /* Oculta la navegación por defecto en móvil */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Ajusta según la altura de tu header */
+    right: 0;
+    background-color: red;
+    width: 100%;
+    text-align: center;
 }
 
-.productos li {
-    margin: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
+nav ul.active { /* Clase para mostrar la navegación cuando el botón se activa */
+    display: flex;
+}
+
+nav li a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav li:last-child a {
+    border-bottom: none;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: block; /* Muestra el botón de hamburguesa en móvil */
+}
+
+/* Hero Banner (Mobile) - Oculto */
+.hero-banner {
+    display: none; /* El banner grande se oculta en móvil según el diseño */
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #eee; /* Fondo claro para el banner de escritorio */
+    color: #333;
+}
+
+.hero-banner h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Sección Productos (Mobile) */
+.productos {
+    padding: 1rem;
+    text-align: center;
+}
+
+.productos h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.lista-productos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Una tarjeta por fila en móvil */
+    gap: 1.5rem; /* Espacio entre las tarjetas */
 }
 
 .producto-card {
-    text-align: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .producto-card img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
 }
 
 .producto-card h3 {
+    font-size: 1.2rem;
     margin: 0.5rem 0;
+}
+
+.producto-card .precio {
+    font-size: 1.1rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .producto-card button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-/* Footer con color azul */
+.producto-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer (Mobile) */
 footer {
-    background-color: blue; /* Footer cambia a color azul */
+    background-color: blue; /* Footer cambia a color azul en móvil */
     color: white;
     text-align: center;
     padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
 }
 
-/* Media query para pantallas más grandes, por ejemplo, más de 600px */
+/* --- Media Query para Escritorio (mayor a 600px) --- */
 @media (min-width: 600px) {
-    /* Estilos adicionales para web, si los necesitas */
+    /* Header (Escritorio) */
+    header {
+        background-color: white; /* Header blanco en escritorio */
+        color: #333;
+        border-bottom: 1px solid #ddd;
+        padding: 1rem 2rem;
+    }
+
+    .header-content {
+        max-width: 1200px; /* Ancho máximo para el contenido del header */
+        margin: 0 auto;
+    }
+
+    .logo {
+        color: #333; /* Color del logo en escritorio */
+    }
+
+    .menu-toggle {
+        display: none; /* Oculta el botón de hamburguesa en escritorio */
+    }
+
+    /* Navegación (Escritorio) */
+    nav ul {
+        display: flex; /* Muestra la navegación en línea en escritorio */
+        position: static;
+        background-color: transparent;
+        flex-direction: row;
+        width: auto;
+    }
+
+    nav li a {
+        color: #333; /* Color de los enlaces en escritorio */
+        padding: 0.5rem 1rem;
+        border-bottom: none;
+    }
+
+    nav li a:hover {
+        color: #007bff;
+    }
+
+    /* Hero Banner (Escritorio) - Visible */
+    .hero-banner {
+        display: block; /* Muestra el banner en escritorio */
+        padding: 4rem 2rem;
+        text-align: left;
+    }
+
+    .hero-banner h1 {
+        font-size: 3rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Sección Productos (Escritorio) */
+    .productos {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .productos h2 {
+        text-align: left;
+        font-size: 2rem;
+    }
+
+    .lista-productos {
+        flex-direction: row; /* Tres tarjetas por fila en escritorio */
+        justify-content: space-around;
+        flex-wrap: wrap; /* Permite que las tarjetas se envuelvan si no caben */
+    }
+
+    .lista-productos li {
+        flex-basis: calc(33% - 2rem); /* Aproximadamente 3 por fila con espacio */
+        max-width: calc(33% - 2rem);
+    }
+
+    /* Footer (Escritorio) */
+    footer {
+        background-color: #333; /* Footer gris oscuro en escritorio */
+        color: white;
+        padding: 1.5rem;
+    }
 }
