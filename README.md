@@ -16,7 +16,7 @@ Utilice etiquetas HTML5 como `<header>`, `<main>`, `<nav>`, `<article>`, etc., p
 
 **Título Único y Descriptivo:** 
 El `<title>` de la página (`MANACO: Zapatos de Calidad para la Familia`) es unico y contiene palabras clave para mejorar la visibilidad.
-**Meta Descripción Optimizada:** 
+**Descripción Optimizada:** 
 La `<meta name="description">` es concisa (menos de 160 caracteres) y resume el contenido de la página para atraer a los usuarios a hacer clic.
 **Open Graph (OG):** 
 Se implementarpn las etiquetas Open Graph (`og:title`, `og:description`, `og:image`) para asegurar que el enlace se visualice correctamente con un título, descripción e imagen cuando se comparta en redes sociales.
